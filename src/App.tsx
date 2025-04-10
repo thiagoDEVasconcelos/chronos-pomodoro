@@ -1,25 +1,15 @@
-import { useState } from 'react'
+import {Container} from "./components/Container";
+import { Heading } from "./components/Heading";
+import { Logo } from "./components/Logo";
+
 import "./styles/global.css"
 import "./styles/theme.css"
-import { Heading } from './components/Heading'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <Heading />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Container><Logo /></Container>
+    <Container><Heading>Menu</Heading></Container>
     </>
   )
 }
