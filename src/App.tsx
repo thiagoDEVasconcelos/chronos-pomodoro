@@ -1,10 +1,15 @@
+import { PlayIcon, StopCircleIcon } from "lucide-react";
 import {Container} from "./components/Container";
 import { CountDown } from "./components/CountDown";
+import { Cycles } from "./components/Cycles";
+import { DefaultButton } from "./components/DefaultButton";
+import { DefaultInput } from "./components/DefaultInput";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
 
 import "./styles/global.css"
 import "./styles/theme.css"
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -15,8 +20,7 @@ function App() {
     <Container>
       <form action="" className="form">
         <div className="formRow">
-          <label htmlFor="input">task</label>
-          <input type="text" id="input"/>
+          <DefaultInput id="meuInput" type="text" labelText="ads asdasdad" placeholder="Digite algo"/>
         </div>
 
         <div className="formRow">
@@ -24,14 +28,15 @@ function App() {
         </div>
 
         <div className="formRow">
-          <p>Ciclos</p>
-          <p>0 0 0 0 0 0 0</p>
+          <Cycles />
         </div>
 
         <div className="formRow">
-          <button>Enviar</button>
+          <DefaultButton icon={<PlayIcon size={24}/>} color="green"/>
+          <DefaultButton icon={<StopCircleIcon size={24}/>} color="red"/>
         </div>
       </form>
+      <Container><Footer /></Container>
     </Container>
     </>
   )
