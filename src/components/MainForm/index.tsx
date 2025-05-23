@@ -13,8 +13,9 @@ export const MainForm = () => {
   const { state, dispatch } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
  
-  const nextCycleType = getNextCycleType(state.currentCycle);
+  const nextCycleType = getNextCycleType(state.currentCycle -1);
 
+    
   const handleCreateNewTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
