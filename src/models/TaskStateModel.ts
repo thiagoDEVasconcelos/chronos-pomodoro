@@ -2,8 +2,9 @@ import { TaskModel } from "./TaskModel"
 
 export type TaskStateModel = {
     tasks: TaskModel[];
-    secondsRemainins: number;
+    secondsRemaining: number;
     formattedSecondsRemaining: string;
+    formattedSecondsToMinutes: string;
     activeTask: TaskModel | null;
     currentCycle: number;
     config: {
