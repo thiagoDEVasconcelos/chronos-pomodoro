@@ -9,6 +9,7 @@ import { useTaskContext } from "../contexts/TaskContext/useTaskContext";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { TaskActionTypes } from "../contexts/TaskContext/taskActions";
 import { Tips } from "./Tips";
+import { TimeWorkerManager } from "../../workers/TimeWorkerManager";
 
 export const MainForm = () => {
   const { state, dispatch } = useTaskContext();
@@ -38,10 +39,6 @@ export const MainForm = () => {
       type: nextCycleType,
     }
     dispatch({type: TaskActionTypes.START_TASK, payload: newTask})
-    
-    const worker = new Worker(new URL('../../workers/timerWorker.js', import.meta.url));
-
-    worker.postMessage('Olá mundo')
   }
 
   function handleInterruptTask() {
