@@ -13,7 +13,7 @@ export function taskReducer(
       const newTask = action.payload;
       const nextCycle = getNextCycle(state.currentCycle);
       const secondsRemaining = newTask.duration * 60;
-
+        
       return {
         ...state,
         activeTask: newTask,

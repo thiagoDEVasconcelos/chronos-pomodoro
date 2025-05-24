@@ -20,8 +20,10 @@ export const Cycles = () => {
 
             <div className={styles.cycleDots}>
        {cycleStep.map((_, index) => {
-          const nextCycle = getNextCycle(index);
+         const cycleNumber = index + 1;
+          const nextCycle = getNextCycle(cycleNumber);
           const nextCycleType = getNextCycleType(nextCycle);
+
           return (
             <span
               key={nextCycle}
